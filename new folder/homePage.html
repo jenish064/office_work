@@ -2,12 +2,13 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=\, initial-scale=1.0">
+  <meta charset="UTF-8"> 
   <title>Food Order</title>
 
   <link rel="stylesheet" href="./css/hpCss.css">
+
+  <!-- jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>  
 
   <!-- font awsome setup for using their icons -->
   <script src="https://kit.fontawesome.com/e25a8b1c0f.js" crossorigin="anonymous"></script>
@@ -51,8 +52,8 @@
           </li>
         </ul>
         <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" i-data>
+          <!-- <button class="btn btn-outline-success" type="submit" sb>Search</button> -->
         </form>
       </div>
 
@@ -61,60 +62,22 @@
 
   <section id="menu" style="margin-bottom: 5%;">
     <div class="container">
-      <div class="row g-5 justify-content-center" style="margin-top: 2%; color: azure;">
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="single">
-            <div data-aos="flip-left">
-              <div class="card" style="width: 18rem; background-color: rgb(49, 49, 49);">
-                <img src="ni.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">North Indian</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-                  <a href="https://www.ubereats.com/au/near-me/north-indian" class="btn btn-primary"
-                    target="_blank">Check-out</a>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-          <div data-aos="flip-left">
-            <div class="card" style="width: 18rem; background-color: rgb(49, 49, 49);">
-              <img src="si.jpeg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">South Indian</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's
-                  content.</p>
-                <a href="https://www.ubereats.com/ca/near-me/south-indian" class="btn btn-primary"
-                  target="_blank">Check-out</a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-          <div data-aos="flip-left">
-            <div class="card" style="width: 18rem; background-color: rgb(49, 49, 49);">
-              <img src="salad.jpeg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Salad</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's
-                  content.</p>
-                <a href="https://www.ubereats.com/ca/near-me/salad " class="btn btn-primary"
-                  target="_blank">Check-out</a>
-              </div>
-            </div>
-
-          </div>
-        </div>
+      <div class="row g-5 justify-content-center" style="margin-top: 2%; color: azure;" card-container>
       </div>
     </div>
+    <template card-temp>
+        <div data-aos="flip-left">
+          <div class="card col-12 col-md-6 col-lg-4" style="width: 18rem; background-color: rgb(49, 49, 49);">
+            <img src="ni.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title" card-title></h5>
+              <p class="card-text" card-text></p>
+              <a href="https://www.ubereats.com/au/near-me/north-indian" class="btn btn-primary link"
+                target="_blank" link>Check-out</a>
+            </div>
+          </div>
+        </div>
+    </template>
 
   </section>
 
@@ -161,6 +124,15 @@
   </section>
 
   <!-- Footer -->
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="./index.js" charset="utf-8"></script>
+  
+</body>
+
   <footer class="text-center text-lg-start bg-light text-muted">
 
     <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
@@ -217,18 +189,10 @@
               <a href="#!" class="text-reset">Order online</a>
             </p>
           </div>
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-      © 2022 Copyright:
-      <a class="text-reset fw-bold" href="https://mdbootstrap.com/">ubereats.com</a>
-    </div>
+          <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2022 Copyright:
+            <a class="text-reset fw-bold" href="https://mdbootstrap.com/">ubereats.com</a>
+          </div>
   </footer>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-
-
-</body>
 
 </html>

@@ -1,24 +1,41 @@
-let regex = new RegExp("[a-z0-9]+@[a-z]+" + "gmail" +".[a-z]{2,3}");
+let menu_cards = [];
+
+const card = document.querySelector("[card-temp]");
+const card_container = document.querySelector("[card-container]");
+const input_data = document.querySelector("[i-data]");
+
+input_data.addEventListener("input", e => {
+  const entry = e.target.value.toLowerCase();
+
+  if (entry.length > 3) {
+    menu_cards.forEach(ele => {
+    const itHas = ele.title.toLowerCase().includes(entry);
+
+    ele.card.classList.toggle("hide", !itHas);
+  })
+  }
+  
+});
 
 
-function validate() {
-    var email = document.getElementById('emailId');
-    var pass = document.getElementById('passId');
 
-    console.log("btn clickd....");
-    if (email.value == "" || regex.test(email.value)) {
-        window.alert("enter valid email detail!");
-        email.classList.add("is-invalid");
+fetch('https://jsonplaceholder.typicode.com/posts')
+  .then(response => response.json())
+  .then(data => {
+    menu_cards = data.map(user => {
+      const single_card = card.content.cloneNode(true).children[0].children[0];
+
+      const title = single_card.querySelector("[card-title]");
+      const text = single_card.querySelector("[card-text]");
+
+      title.textContent = user["title"];
+      text.textContent = user["body"];
+
+      card_container.append(single_card);
+
+      return {title: title.textContent, text: text.textContent, card: single_card};
     }
-    if (pass.value == "") {
-        window.alert("enter vald password");
-        pass.classList.add("is-invalid");
-    }
+  )}
+  );
 
-    btn.location.href = "./h"
-}
-
-
-btn.addEventListener("click", validate);
-
-console.log("its online!!");
+  console.log(menu_cards);
