@@ -1,0 +1,50 @@
+.card {
+    transition: all 0.2s ease !important;
+    cursor: pointer !important;
+    flex-direction: column;
+}
+
+.card:hover {
+    box-shadow: 5px 6px 6px 2px #afaaaa6f !important;
+    transform: scale(1.1) !important;
+}
+
+.btn-primary {
+    --bs-btn-bg: #00853a !important;
+    --bs-btn-border-color: #00853a !important;
+    --bs-btn-hover-bg: #00614f !important;
+    --bs-btn-hover-border-color: #00614f !important;
+}
+
+.btn-outline-success {
+    --bs-btn-color: #5bffa2 !important;
+}
+
+
+
+/* features section */
+.lbox {
+    background-color: rgb(0, 0, 0);
+    border-bottom-left-radius: 35px;
+    border-top-right-radius: 35px;
+    padding: 3%;
+    box-shadow: 10px 10px;
+}
+
+.rbox {
+    text-align: right;
+    background-color: rgb(0, 0, 0);
+    border-bottom-left-radius: 35px;
+    border-top-right-radius: 35px;
+    padding: 3%;
+    box-shadow: 10px 10px;
+    margin-left: 40%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+
+/* hide eleents */
+.hide {
+    display: none !important;
+}
